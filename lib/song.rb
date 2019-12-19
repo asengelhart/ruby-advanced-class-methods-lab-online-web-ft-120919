@@ -41,7 +41,7 @@ class Song
   end 
   
   def self.new_from_filename(filename)
-    artist, name = filename.split("-").collect{|word| word.strip}
+    artist, name = filename.split("-").collect{|word| word.strip.delete_suffix(".mp3")}
     
   end 
 end
