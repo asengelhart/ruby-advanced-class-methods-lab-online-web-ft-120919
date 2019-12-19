@@ -42,8 +42,12 @@ class Song
   
   def self.new_from_filename(filename)
     artist, name = filename.split("-").collect{|word| word.strip.delete_suffix(".mp3")}
-    new_song = self.create_by_name(name)
+    new_song = self.new_by_name(name)
     new_song.artist = artist 
     new_song
+  end 
+  
+  def self.create_from_filename(filename)
+    self.new_from_filename(filename).save
   end 
 end
