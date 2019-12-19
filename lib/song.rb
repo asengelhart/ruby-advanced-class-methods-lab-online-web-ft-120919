@@ -28,8 +28,7 @@ class Song
   end 
   
   def self.find_by_name(name)
-    binding.pry
-    self.all.find(name)
+    self.all.detect{|item| item.name == name}
   end 
   
   def self.find_or_create_by_name(name)
