@@ -41,6 +41,7 @@ class Song
   end 
   
   def self.new_from_filename(filename)
-    words = filename.split
+    artist, name = filename.split("-").collect{|word| word.strip}
+    
   end 
 end
